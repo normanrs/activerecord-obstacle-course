@@ -318,7 +318,7 @@ describe 'ActiveRecord Obstacle Course' do
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    users = Order.where(items: 8)
+    users = Order.joins(:user).find_by(items: 8).pluck(:name)
     # ------------------------------------------------------------
 
     # Expectation
